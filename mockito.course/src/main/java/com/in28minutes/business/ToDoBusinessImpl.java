@@ -23,7 +23,6 @@ public class ToDoBusinessImpl {
 		List<String> todos = todoService.retrieveTodos(user);
 		for(String todo : todos){
 		if(todo.contains("Spring")){
-			
 			filteredTodos.add(todo);
 		}
 	}
