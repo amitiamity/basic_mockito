@@ -13,10 +13,17 @@ public class TodoBusinessImplStubTest {
 
 	@Test
 	public void test() {
+		int count = 0;
 		ToDoService todoServiceStub = new TodoServiceStub();
 		ToDoBusinessImpl todoBusinessImpl = new ToDoBusinessImpl(todoServiceStub);
 		List<String> filteredToDos = todoBusinessImpl.retrieveTodosRelatedToSpring("dummy");
-		assertEquals(2, filteredToDos.size());
+		//check the spring topics.
+		for(String springTopics : filteredToDos){
+			if(springTopics.contains("Spring")){
+				count++;
+			}
+		}
+		assertEquals(2, count);
 	}
 
 }
